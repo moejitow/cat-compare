@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header :title=title :pages=pages :image=image />
+    <router-view/>
   </div>
 </template>
 
