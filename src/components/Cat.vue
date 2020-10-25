@@ -3,11 +3,13 @@
     <!-- TODO: styling in css, not here! -->
     <v-img :src="image.url" contain></v-img>
     <v-card-actions class="justify-space-between">
-      <v-btn @click="vote('likes')" color="error" dark>dislike</v-btn>
+      <v-btn @click="vote('dislikes')" color="error" dark
+        >dislike</v-btn
+      >
       <v-btn @click="vote('skipped')" color="warning" dark
         >skip</v-btn
       >
-      <v-btn @click="vote('liked')" color="success" dark>like</v-btn>
+      <v-btn @click="vote('likes')" color="success" dark>like</v-btn>
     </v-card-actions>
   </v-card>
 </template>

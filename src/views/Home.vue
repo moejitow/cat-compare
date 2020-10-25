@@ -39,6 +39,7 @@ export default {
     startGame(value) {
       this.time = value;
       this.timerStarted = true;
+      this.timeout = false;
     },
     addVote(value) {
       this.votes[value]++;
