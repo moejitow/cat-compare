@@ -4,6 +4,7 @@
       color="green darken-3"
       dark
     >
+    <!-- TODO: credit flaticon author -->
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"

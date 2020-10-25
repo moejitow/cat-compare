@@ -1,15 +1,19 @@
 <template>
   <div class="home">
     <Timer v-if="!timerStarted" @game-started="startGame"/>
+    <Countdown v-if="timerStarted" :time="time"/>
   </div>
 </template>
 
 <script>
 import Timer from '@/components/Timer'
+import Countdown from '@/components/Countdown'
+
 export default {
   name: 'Home',
   components: {
-    Timer
+    Timer,
+    Countdown
   },
   data: function() {
     return {
