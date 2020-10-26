@@ -1,15 +1,21 @@
 <template>
   <v-card>
-    <!-- TODO: styling in css, not here! -->
-    <v-img :src="image.url" contain></v-img>
+    <v-img
+      :height="size.height"
+      :width="size.width"
+      :src="image.url"
+      contain
+    ></v-img>
     <v-card-actions class="justify-space-between">
-      <v-btn @click="vote('dislikes')" color="error" dark
-        >dislike</v-btn
+      <v-btn @click="vote('dislikes')" color="error" dark large>
+        dislike
+      </v-btn>
+      <v-btn @click="vote('skipped')" color="warning" dark large>
+        skip
+      </v-btn>
+      <v-btn @click="vote('likes')" color="success" dark large
+        >like</v-btn
       >
-      <v-btn @click="vote('skipped')" color="warning" dark
-        >skip</v-btn
-      >
-      <v-btn @click="vote('likes')" color="success" dark>like</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -23,6 +29,18 @@ export default {
     return {
       image: { url: '' },
     };
+  },
+  computed: {
+    size() {
+      if (this.isMobile) {
+        return { height: '350px', width: '400px' };
+      } else {
+        return { height: '750px', width: '800px' };
+      }
+    },
+  },
+  props: {
+    isMobile: Boolean,
   },
   created() {
     this.loadNextImage();
@@ -52,12 +70,7 @@ export default {
 </script>
 
 <style scoped>
-#cat {
-  height: 80%;
-  width: auto;
-}
-.v-card {
-  height: 80%;
-  width: auto;
+>>> .v-btn {
+  margin: 10px;
 }
 </style>
