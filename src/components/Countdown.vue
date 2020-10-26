@@ -1,15 +1,8 @@
 <template>
-  <v-container fluid>
-    <v-row>
-      <v-progress-linear :value="getValue"></v-progress-linear>
-    </v-row>
-    <v-row>
-      <span v-if="!timeout">
-        {{ currentTime }}
-      </span>
-      <span v-else>Time is up!</span>
-    </v-row>
-  </v-container>
+  <v-progress-linear
+    class="my-4"
+    :value="getValue"
+  ></v-progress-linear>
 </template>
 
 <script>

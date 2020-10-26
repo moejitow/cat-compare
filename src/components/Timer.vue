@@ -1,13 +1,10 @@
 <template>
   <v-container fluid>
-    <v-col align="center">
-      <span
-        >Please select a time duration in seconds to play Cat
-        Compare</span
-      >
-      <v-spacer></v-spacer>
+    <v-row class="align-center justify-center">
+      Please select a time duration in seconds to play Cat Compare
+    </v-row>
+    <v-row>
       <v-slider
-        label="Duration in seconds"
         v-model="time"
         min="10"
         max="180"
@@ -15,6 +12,8 @@
         ticks
         thumb-label
       ></v-slider>
+    </v-row>
+    <v-row class="align-center justify-center">
       <v-btn
         @click="startGame"
         color="green lighten-4"
@@ -22,7 +21,7 @@
         large
         >Start Game</v-btn
       >
-    </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -41,9 +40,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-span {
-  font-size: 1.5em;
-}
-</style>

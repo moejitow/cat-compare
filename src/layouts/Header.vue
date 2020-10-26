@@ -1,6 +1,5 @@
 <template>
   <v-app-bar app color="green darken-3" dark>
-    <!-- TODO: credit flaticon author -->
     <div class="d-flex align-center">
       <v-img
         alt="Vuetify Logo"
@@ -10,17 +9,28 @@
         transition="scale-transition"
         width="40"
       />
-      <span class="ml-2"><h1>Cat Compare</h1></span>
+      <span class="ml-2"><h2>Cat Compare</h2></span>
     </div>
 
     <v-spacer></v-spacer>
 
-    <!-- TODO: add color and margin in css not here -->
-    <router-link style="color: white" class="mr-5" to="/"
-      ><h2>Home</h2></router-link
-    >
-    <router-link style="color: white" class="mr-5" to="/about"
+    <router-link class="route-link" to="/"><h2>Home</h2></router-link>
+    <router-link class="route-link" to="/about"
       ><h2>About</h2></router-link
     >
   </v-app-bar>
 </template>
+
+<style scoped>
+>>> .h2 {
+  color: white;
+  font-size: 10px;
+}
+>>> .router-link-exact-active {
+  color: #ffff00 !important;
+}
+>>> .route-link {
+  color: white;
+  margin-right: 5px;
+}
+</style>
