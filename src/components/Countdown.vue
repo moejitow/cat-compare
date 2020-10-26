@@ -1,16 +1,15 @@
 <template>
-  <div class="countdown">
-    <!-- TODO: progress bar should always be same width -->
-    <v-progress-linear
-      style="width: 50em"
-      :value="currentTime"
-      :buffer-value="time"
-    ></v-progress-linear>
-    <span v-if="!timeout">
-      {{ currentTime }}
-    </span>
-    <span v-else>Time is up!</span>
-  </div>
+  <v-container fluid>
+    <v-row>
+      <v-progress-linear :value="getValue"></v-progress-linear>
+    </v-row>
+    <v-row>
+      <span v-if="!timeout">
+        {{ currentTime }}
+      </span>
+      <span v-else>Time is up!</span>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -27,6 +26,11 @@ export default {
       currentTime: 0,
       timeout: false,
     };
+  },
+  computed: {
+    getValue() {
+      return (100 * this.currentTime) / this.time;
+    },
   },
   watch: {
     currentTime: {
